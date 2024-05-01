@@ -7,6 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+generator json {
+  provider = "prisma-json-types-generator"
+}
+
 model Product {
   id          String     @id @default(auto()) @map("_id") @db.ObjectId
   description String
@@ -81,6 +85,8 @@ model User {
   accounts      Account[]
   sessions      Session[]
   Cart          Cart[]
+  // [LocationJson]
+  location      Json
 
   @@map("users")
 }
