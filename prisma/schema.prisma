@@ -85,7 +85,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   Cart          Cart[]
-  // [LocationJson]
+  /// [LocationJson]
   location      Json
 
   @@map("users")
